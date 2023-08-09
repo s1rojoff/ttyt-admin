@@ -1,9 +1,9 @@
 import { defineStore } from 'pinia'
 
-export const useStore = defineStore('store', {
+export const useSidebarStore = defineStore('sidebar', {
   state: () => {
     return {
-      test: false
+      accordionItem: 1
     }
   },
 })
