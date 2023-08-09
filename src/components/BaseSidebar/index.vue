@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { type PropType, onMounted } from 'vue'
+import { type PropType } from 'vue'
 import BaseIcon from '@/components/BaseIcon/index.vue'
 import type { Items } from '@/interfaces/index'
 import { useSidebarStore } from '@/stores/index'
@@ -11,17 +11,12 @@ const props = defineProps({
   }
 })
 function handeItemClicked(id: number): void {
-  localStorage.setItem('itemId', `${id}`)
   if (store.$state.accordionItem != id) {
     store.$state.accordionItem = id
   } else {
     store.$state.accordionItem = 123
   }
 }
-onMounted(() => {
-  const itemId = localStorage.getItem('itemId')
-  console.log(itemId)
-})
 </script>
 <template>
   <div class="h-[100dvh] bg-[#001018] p-5 pr-0">
