@@ -40,12 +40,12 @@ export function useSidebar(): DataSidebar {
         },
         {
           name: 'Amaldagi loyihalar',
-          route: '/international/currentpro'
+          route: '/current-project'
         },
 
         {
           name: 'Jalb etilgan sarmoyalar va grantlar',
-          route: '/international/investment'
+          route: '/investment'
         }
       ]
     },
@@ -55,23 +55,23 @@ export function useSidebar(): DataSidebar {
       subItem: [
         {
           name: "Ma'naviy va Ma'rifiy tadbirlar",
-          route: '/youthpolicy/activities'
+          route: '/activities'
         },
         {
           name: "To'garak va klublar",
-          route: '/youthpolicy/training'
+          route: '/training'
         },
         {
           name: 'Tanlovlar, musobaqa va stipendiyalar',
-          route: '/youthpolicy/scholarship'
+          route: '/scholarship'
         },
         {
           name: 'Talabalar shaharchasi',
-          route: '/youthpolicy/studentcampus'
+          route: '/student-campus'
         },
         {
           name: 'Talabalar hayotidan fotogalereya',
-          route: '/youthpolicy/galery'
+          route: '/galery'
         }
       ]
     },
@@ -81,11 +81,11 @@ export function useSidebar(): DataSidebar {
       subItem: [
         {
           name: 'Yangiliklar',
-          route: '/announcement/news'
+          route: '/news'
         },
         {
           name: 'Kutilyotgan tadbirlar',
-          route: '/announcement/upcoming-event'
+          route: '/upcoming-event'
         }
       ]
     }
