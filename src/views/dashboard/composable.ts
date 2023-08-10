@@ -10,7 +10,7 @@ export function useSidebar(): DataSidebar {
       subItem: [
         {
           name: 'Rahbariyat',
-          route: ''
+          route: '/'
         },
         {
           name: "Bo'linmalar",
