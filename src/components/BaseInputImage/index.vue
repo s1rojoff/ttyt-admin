@@ -1,4 +1,4 @@
-<!-- <script setup lang="ts">
+<script setup lang="ts">
 import { ref } from 'vue'
 const imageSrc = ref<string>('')
 const inputFile = ref<string | null>('')
@@ -20,10 +20,10 @@ function handleFileChange(event: any) {
 </script>
 <template>
   <div>
-    <input ref="inputFile" type="file" @change="handleFileChange" />
-    <div class="w-40 h-40 rounded-lg border border-red-600">
-      <p><img :src="imageSrc" alt="" /></p>
+    <div class="bg-[url('/images/bg-user1.jpg')] bg-center object-cover w-40 h-40 rounded-lg border border-[#33509d] mb-5 overflow-hidden">
+      <p class=""><img :src="imageSrc" alt="" class="object-cover"/></p>
     </div>
-    <button @click="test">click me</button>
+    <input ref="inputFile" type="file" @change="handleFileChange" class="file:bg-[#33509d] rounded-full file:text-white file:border-none file:bg-none" />
+    
   </div>
-</template> -->
+</template>
