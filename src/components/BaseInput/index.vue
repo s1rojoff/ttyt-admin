@@ -23,7 +23,7 @@ size: {
   <div>
     <input 
       class="border-[#33509d]  border rounded-md outline-none py-2 px-2  focus:border-sky-500 placeholder:text-[#575757]"
-      :class="{'py-2 w-[500px]' : (props.size == 'md'), 'py-1 px-1' : (props.size == 'sm')}"
+      :class="{'py-1 px-1 w-[500px]' : (props.size == 'md'), 'py-1 px-1' : (props.size == 'sm')}"
       :type = "props.type"
       :value = "props.modelValue"
       :placeholder = "props.placeholder"

@@ -20,6 +20,6 @@
     :rows="props.rows" 
     :placeholder="props.placeholder" 
     class="border border-[#33509d] rounded-md p-2 resize-none outline-none focus:border-sky-500"
-    @input="$emit('update:modelValue', ($event.target as HTMLAreaElement).value)"
+    @input="$emit('update:modelValue', ($event.target as HTMLTextareaElement).value)"
   ></textarea>
 </template>
