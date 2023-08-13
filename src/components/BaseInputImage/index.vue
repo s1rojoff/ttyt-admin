@@ -19,7 +19,7 @@ function handleFileChange(event: any) {
       <div
         class="bg-[url('/images/bg-user1.jpg')] bg-center cursor-pointer object-cover w-40 h-40 rounded-lg border border-[#33509d] mb-5 overflow-hidden"
       >
-        <img :src="imageSrc" alt="" class="object-cover w-full h-full" />
+        <img :src="imageSrc" alt="img" v-if="imageSrc" class="object-cover w-full h-full" />
       </div>
     </label>
     <input
