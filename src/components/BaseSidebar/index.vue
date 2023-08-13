@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { type PropType } from 'vue'
+import { type PropType, onMounted, ref } from 'vue'
 import BaseIcon from '@/components/BaseIcon/index.vue'
 import type { Items } from '@/interfaces/index'
 import { useSidebarStore } from '@/stores/index'
-import { useRoute, type RouteLocationNormalized } from 'vue-router';
-const $route: RouteLocationNormalized = useRoute();
+import { useRoute, type RouteLocationNormalized } from 'vue-router'
+const $route: RouteLocationNormalized = useRoute()
 const store = useSidebarStore()
 const props = defineProps({
   arrItems: {
@@ -12,17 +12,26 @@ const props = defineProps({
     required: true
   }
 })
+const sidebarItem = ref<string | number | null>(1)
+onMounted(() => {
+  if (localStorage.getItem('sideBarItem')) {
+    store.$state.accordionItem = localStorage.getItem('sideBarItem')
+  } else {
+    store.$state.accordionItem = 1
+  }
+  console.log(store.$state.accordionItem)
+})
 function handeItemClicked(id: number): void {
   if (store.$state.accordionItem != id) {
     store.$state.accordionItem = id
+    localStorage.setItem('sideBarItem', `${store.$state.accordionItem}`)
   } else {
     store.$state.accordionItem = 123
   }
 }
 const isExactActive = (route: string): boolean => {
-  return $route.path === route;
-};
-
+  return $route.path === route
+}
 </script>
 <template>
   <div class="h-[100dvh] bg-[#001018] p-5 pr-0">
@@ -44,14 +53,14 @@ const isExactActive = (route: string): boolean => {
             name="down"
           />
         </div>
-        <div class="ml-5" v-if="store.$state.accordionItem === item.id">
+        <div class="ml-5" v-if="item.id === store.$state.accordionItem">
           <router-link
             class="sub-item text-base py-1 block hover:ml-2"
             v-slot="{ isExactActive }"
             v-for="(subItem, subIndex) in item.subItem"
             :key="subIndex"
             :to="subItem.route"
-            :class="{'text-red-500': isExactActive(subItem.route)}"
+            :class="{ 'text-red-500': isExactActive(subItem.route) }"
           >
             {{ subItem.name }}
           </router-link>

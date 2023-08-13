@@ -1,5 +1,4 @@
 <script setup lang="ts">
-  const emits = defineEmits(['update:modelValue'])
   const props = defineProps({
     size:{
       type: String,
