@@ -13,14 +13,14 @@ const props = defineProps({
   }
 })
 const sidebarItem = ref<string | number | null>(1)
-onMounted(() => {
-  if (localStorage.getItem('sideBarItem')) {
-    store.$state.accordionItem = localStorage.getItem('sideBarItem')
-  } else {
-    store.$state.accordionItem = 1
-  }
-  console.log(store.$state.accordionItem)
-})
+// onMounted(() => {
+//   if (localStorage.getItem('sideBarItem')) {
+//     store.$state.accordionItem = localStorage.getItem('sideBarItem')
+//   } else {
+//     store.$state.accordionItem = 1
+//   }
+//   console.log(store.$state.accordionItem)
+// })
 function handeItemClicked(id: number): void {
   if (store.$state.accordionItem != id) {
     store.$state.accordionItem = id
