@@ -31,8 +31,8 @@ const props = defineProps({
       }"
       :type="props.type"
       :value="props.modelValue"
-      :placeholder="props.placeholder"
       @input="$emit('update:modelValue', ($event.target as HTMLInputElement).value)"
+      :placeholder="props.placeholder"
     />
   </div>
 </template>
