@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const emits = defineEmits(['update:modelValue'])
-  const props = defineProps({
-    type: {
+const props = defineProps({
+  type: {
     type: String,
     default: 'text'
   },
@@ -9,25 +9,28 @@ const emits = defineEmits(['update:modelValue'])
     type: String,
     default: ''
   },
-placeholder: {
-  type: String,
-  default: ''
-},
-size: {
-  type: String,
-  default: 'md'
-}
-  })
+  placeholder: {
+    type: String,
+    default: ''
+  },
+  size: {
+    type: String,
+    default: 'md'
+  }
+})
 </script>
 <template>
   <div>
-    <input 
-      class="border-[#33509d]  border rounded-md outline-none  focus:border-sky-500 placeholder:text-[#575757]"
-      :class="{'py-1 px-1 w-[500px]' : (props.size == 'md'), 'py-1 px-1 w-[300px]' : (props.size == 'sm')}"
-      :type = "props.type"
-      :value = "props.modelValue"
-      :placeholder = "props.placeholder"
+    <input
+      class="border-[#33509d] border rounded-md outline-none focus:border-sky-500 placeholder:text-[#575757]"
+      :class="{
+        'py-1 px-1 w-[500px]': props.size == 'md',
+        'py-1 px-1 w-[300px]': props.size == 'sm'
+      }"
+      :type="props.type"
+      :value="props.modelValue"
+      :placeholder="props.placeholder"
       @input="$emit('update:modelValue', ($event.target as HTMLInputElement).value)"
-    >
+    />
   </div>
 </template>
