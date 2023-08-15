@@ -60,7 +60,7 @@ export const routers = [
         meta: {
           parentName: 'international section'
         },
-        component: () => import('@/views/internationalView/about-department.vue')
+        component: () => import('@/views/internationalView/current-project.vue')
       },
       {
         path: 'investment',

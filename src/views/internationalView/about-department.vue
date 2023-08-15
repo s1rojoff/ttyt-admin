@@ -1,7 +1,34 @@
-<script setup lang="ts"> 
+<script setup lang="ts">
+import BaseInput from '@/components/BaseInput/index.vue'
+import BaseInputImage from '@/components/BaseInputImage/index.vue'
+import BaseInputTextarea from '@/components/BaseTextarea/index.vue'
+import BaseButton from '@/components/BaseButton/index.vue'
 </script>
 <template>
+  <div class="text-center uppercase text-xl">
+    <p>Xalqaro aloqalar bo'limi haqida</p>
+  </div>
+  <div class="flex gap-10 justify-between ">
     <div>
-         xalqaro bo'lim haqida
+      <BaseInputImage />
     </div>
+    <div class="flex flex-col gap-y-5 w-full">
+      <BaseInput type="text"  placeholder="Lavozim" />
+      <BaseInput type="text"  placeholder="FISH" />
+      <div class="flex justify-between items-center gap-5">
+        <BaseInput type="number" class="w-full" placeholder="Telefon" />
+        <BaseInput type="email" class="w-full" placeholder="Email" />
+      </div>
+    </div>
+  </div>
+  <div class="mt-5 flex justify-between gap-5">
+    <BaseInputTextarea placeholder="Ish tajribasi" class="h-32" />
+    <BaseInputTextarea placeholder="Majburiyatlari" class="h-32" />
+  </div>
+  <div class="mt-5">
+    <BaseInputTextarea placeholder="Bo'lim haqida ma'lumot" class="h-24"/>
+  </div>
+  <div class="w-full text-end mt-5">
+    <BaseButton />
+  </div>
 </template>
