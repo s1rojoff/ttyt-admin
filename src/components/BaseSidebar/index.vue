@@ -12,21 +12,24 @@ const props = defineProps({
     required: true
   }
 })
-const sidebarItem = ref<string | number | null>(1)
-// onMounted(() => {
-//   if (localStorage.getItem('sideBarItem')) {
-//     store.$state.accordionItem = localStorage.getItem('sideBarItem')
-//   } else {
-//     store.$state.accordionItem = 1
-//   }
-//   console.log(store.$state.accordionItem)
-// })
+const sidebarItem = ref<any>(0)
+onMounted(()=>{
+  if(localStorage.getItem('sideBarItem')){
+    sidebarItem.value = localStorage.getItem('sideBarItem')
+    console.log(typeof sidebarItem.value);
+    
+  }
+  else{
+    sidebarItem.value = 1
+  }
+})
 function handeItemClicked(id: number): void {
-  if (store.$state.accordionItem != id) {
-    store.$state.accordionItem = id
-    localStorage.setItem('sideBarItem', `${store.$state.accordionItem}`)
+  localStorage.removeItem('sideBarItem')
+  if (sidebarItem.value != id) {
+    sidebarItem.value = id
+    localStorage.setItem('sideBarItem', `${id}`)
   } else {
-    store.$state.accordionItem = 123
+    sidebarItem.value = 0
   }
 }
 const isExactActive = (route: string): boolean => {
@@ -34,7 +37,7 @@ const isExactActive = (route: string): boolean => {
 }
 </script>
 <template>
-  <div class="h-[100dvh] bg-[#001018] p-5 pr-0">
+  <div class="h-screen bg-[#001018] p-5 pr-0">
     <div class="flex justify-center items-end pr-5">
       <img src="/favicon.png" class="w-10" />
       <p class="text-white ml-3 text-xl">ttyt.uz</p>
@@ -48,12 +51,12 @@ const isExactActive = (route: string): boolean => {
         <div class="flex items-center justify-start" @click.stop="handeItemClicked(item.id)">
           <p class="text-xl font-normal">{{ item.name }}</p>
           <BaseIcon
-            :class="[store.$state.accordionItem === item.id ? 'rotate-180' : '']"
+            :class="[(item.id == (sidebarItem * 1))  ? 'rotate-180' : '']"
             class="w-3 h-3 text-white ml-3"
             name="down"
           />
         </div>
-        <div class="ml-5" v-if="item.id === store.$state.accordionItem">
+        <div class="ml-5" v-if="(sidebarItem *1)  ==item.id">
           <router-link
             class="sub-item text-base py-1 block hover:ml-2"
             v-slot="{ isExactActive }"
