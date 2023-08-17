@@ -10,14 +10,16 @@ import BaseTextarea from '@/components/BaseTextarea/index.vue'
   </div>
   <div class="flex gap-5 mt-5 w-full">
     <div>
-      <BaseInputImage />
+      <BaseInputImage/>
     </div>
     <div class="flex flex-col gap-5 w-full">
-      <BaseInput placeholder="Shaharcha haqida yangilik"/>
-      <BaseTextarea  placeholder="To'liq ma'lumot" class="h-28"/>
+      <BaseInput placeholder="Shaharcha haqida yangilik" />
+      <BaseTextarea placeholder="To'liq ma'lumot" class="h-28" />
     </div>
   </div>
-  <div class="text-end  ">
+  <!-- All images -->
+  <div></div>
+  <div class="text-end">
     <BaseButton />
   </div>
 </template>
