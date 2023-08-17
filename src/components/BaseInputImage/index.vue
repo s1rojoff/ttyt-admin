@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+const emit = defineEmits(['downloadImg'])
 const imageSrc = ref<string>('')
 function handleFileChange(event: any) {
   const file = event.target.files[0]
@@ -11,6 +12,7 @@ function handleFileChange(event: any) {
     }
     reader.readAsDataURL(file)
   }
+  emit('downloadImg', event.target.files)
 }
 </script>
 <template>
