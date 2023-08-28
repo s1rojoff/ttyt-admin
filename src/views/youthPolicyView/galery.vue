@@ -17,6 +17,7 @@ function test(val: any) {
   if (images.value.length <= 8) {
     images.value.push(img.value)
   }
+
 }
 </script>
 <template>
@@ -24,6 +25,7 @@ function test(val: any) {
     <p>Talabalar hayotidan fotogalereya</p>
   </div>
   <div class="mt-5 flex justify-center">
+
     <BaseInputImage @download-img="test" />
   </div>
   <!-- All images -->
